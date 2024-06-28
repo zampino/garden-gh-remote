@@ -1,17 +1,17 @@
 (ns shy-pepper-10
   (:require [clojure.java.io :as io]
             [org.httpkit.server :as server]
-            ;; garden-id
+   ;; garden-id
             [hiccup.page :as page]
             [ring.middleware.session :as session]
             [ring.middleware.session.cookie :refer [cookie-store]]
             [nextjournal.garden-id :as garden-id]
-            ;; garden-email
+   ;; garden-email
             [ring.middleware.params :as ring.params]
             [nextjournal.garden-email :as garden-email]
             [nextjournal.garden-email.render :as render-email]
             [nextjournal.garden-email.mock :as mock-email]
-            ;; garden-cron
+   ;; garden-cron
             [nextjournal.garden-cron :as garden-cron]))
 
 (defn html-response [req body]
@@ -134,6 +134,7 @@
      [:div.mt-5
       [:p "This is just an example project to get you started with application.garden features, please refer to our "
        [:a.underline {:href "https://docs.apps.garden"} "documentation"] " for more details."]]
+     [:h1 "Teset multi-push repo"]
      (cron-fragment)
      (storage-fragment)
      (auth-fragment req)
